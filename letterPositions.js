@@ -2,18 +2,20 @@ const letterPositions = function(sentence) {
   const results = {};
 
   for (let i = 0; i < sentence.length; i++) {
-    let letter = sentence[i];
+    let letter = sentence[i]; 
     if (results[letter]) {
-      results[letter].push(i);
+      results[letter].push(i);//pushes letter position to array
     } else {
-      results[letter] = [i]
+      results[letter] = [i] //adds letter object and position if one wasnt already there
     }
   }
-  delete results[' '];
+  delete results[' ']; //gets rid of white space objects
   // logic to update results here
   return results;
 }; 
 
+
+//Test assertion
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
