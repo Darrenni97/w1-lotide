@@ -27,33 +27,36 @@ const eqArrays = function(arr1, arr2) {
 const eqObjects = function(object1, object2) {
 
   const object1Length = Object.keys(object1).length;
-  const object2Length = Object.keys(object1).length;
-
-  if (object1Length !== object2Length) {
+  const object2Length = Object.keys(object2).length;
+  //checks length of both objects
+  if (object1Length != object2Length) {
     return false;
   }
 
-  //compares object1 to object 2
+  
   for (let i in object1) {
-    if (object1.hasOwnProperty(i)){
-      if (!object2.hasOwnProperty(i)) {
+    if (Array.isArray(object1[i])) {
+      
+      if (!eqArrays(object1[i], object2[i])) {
+        // if it fails then return false
         return false;
-      } if (object1[i] !== object2[i]) {
-        return false;
+      }
+      if (!Array.isArray(object1[i]) && !Array.isArray(object2[i])) {
+        
+        //compares object1 to object 2
+        if (!object2.hasOwnProperty(i)) { 
+          // if object2 doesnt have object1[i] key return false
+          return false;
+        }
+        if (object1[i] !== object2[i]) {
+          //if object[1] is not equal to the value of object[2] return false
+          return false;
+        }
       }
     }
   }
-  // //compares object2 to object 1 (helps if object 2 is longer than object 1)
-  // for (let i in object2) {
-  //   if (object2.hasOwnProperty(i)){
-  //     if (!object1.hasOwnProperty(i)) {
-  //       return false;
-  //     } if (object2[i] !== object1[i]) {
-  //       return false;
-  //     }
-  //   }
-  // }
-  // return true;
+
+  return true;
 };
 
 //first test
