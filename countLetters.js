@@ -27,3 +27,5 @@ const countLetters = function(word) {
 
 const result1 = countLetters("lighthouse in the house")
 assertEqual(result1['l'], 1); 
+
+module.exports = countLetters;
