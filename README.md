@@ -26,6 +26,17 @@ This project was created and published by me as part of my learnings at Lighthou
 
 The following functions are currently implemented:
 
-* `head`: returns head of array
-* `tail`: returns tail of array
-* `middle`: returns middle element of array
+* `countLetters`: returns an object with the number of occurrences for each.
+* `countOnly`: returns the number of occurrences of each letter.
+* `eqArrays`: tests if two arrays are the same.
+* `eqObjects`: tests if two objects are the same.
+* `findKey`: returns the key associated with given object.
+* `findKeyByValue`: returns the key associated with given value in object.
+* `flatten`: returns a flat array of the same elements.
+* `head`: returns the first element in array.
+* `letterPositions`: returns an object with an array of positions for each in string.
+* `map`: return an array with the callback applied.
+* `middle`: return the middle element of an array. If the array is even, it will return both middle ones.
+* `tail`: returns the last element of an array.
+* `takeUntil`: return all elements up to a match.
+* `without`: returns a new array without excluded elements.
